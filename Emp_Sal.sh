@@ -10,7 +10,7 @@ x=$((RANDOM % 2))
 if [ $x -eq 1 ]
 then
 	echo "Is Present"
-	y=`expr $WagePerHr * $FullDay`
+	y=$(($WagePerHr * $FullDay))
 	echo "Wage is : " $y
 else
 	echo "Is Absent"
