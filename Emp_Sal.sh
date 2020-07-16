@@ -9,16 +9,17 @@ Dayoff=0
 
 x=$((RANDOM % 2))
 
-	case $x in
-	1) 
-	y=$(($Fullday * $WagePerHr))
-	;;
-	2)
-	y=$(($Partday * $WagePerHr))
-	;;
-	3)
-	y=$(($DayOff * $WagePerHr))
-	;;
-	esac
+	if [ $x -eq  1 ]
+	then
+	y=$(($FullDay * $WagePerHr))
+	echo "FullDay"
+	elif [ $x -eq 2 ]
+	then
+	y=$(($PartDay * $WagePerHr))
+	echo "PartDay"
+	else
+	y=$(($Dayoff * $WagePerHr))
+	echo "Dayoff"
+	fi
 
-echo "Wage is :- " $y
+echo "Wage is :- "$y
