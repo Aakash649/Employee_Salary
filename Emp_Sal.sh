@@ -6,20 +6,22 @@ WagePerHr=20
 FullDay=8
 PartDay=4
 Dayoff=0
-
+TotalWage=0
+for (( i=1; i<=20; i++ ))
+do
 x=$((RANDOM % 2))
 
-	if [ $x -eq  1 ]
-	then
+	case $x in
+	1) 
 	y=$(($FullDay * $WagePerHr))
-	echo "FullDay"
-	elif [ $x -eq 2 ]
-	then
+	;;
+	2)
 	y=$(($PartDay * $WagePerHr))
-	echo "PartDay"
-	else
+	;;
+	3)
 	y=$(($Dayoff * $WagePerHr))
-	echo "Dayoff"
-	fi
-
-echo "Wage is :- "$y
+	;;
+	esac
+	TotalWage=$(($TotalWage + $y))
+done
+echo "Wage is :- " $TotalWage
