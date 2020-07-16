@@ -1,11 +1,20 @@
 #!/bin/bash -x
 
+
 echo "Welcome to Employee Wage Computation Program on Master Branch"
 
-WagePerHr=20
+function full(){
 FullDay=8
+}
+function part(){
 PartDay=4
+}
+function DayOff()
+{
 Dayoff=0
+}
+
+WagePerHr=20
 TotalWage=0
 day=0
 hours=0
@@ -14,17 +23,17 @@ do
 x=$((RANDOM % 2))
 
 	case $x in
-	1) 
+	1) full
 	y=$(($FullDay * $WagePerHr))
 	day=$(($day+1))
 	hours=$(($hours+$FullDay))
 	;;
-	2)
+	2) part
 	y=$(($PartDay * $WagePerHr))
 	day=$(($day+$((1/2))))
         hours=$(($hours+$PartDay))
 	;;
-	3)
+	3) DayOff
 	y=$(($Dayoff * $WagePerHr))
 	day=$(($day+0))
         hours=$(($hours+$Dayoff))
