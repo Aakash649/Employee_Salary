@@ -11,13 +11,13 @@ x=$((RANDOM % 2))
 
 	case $x in
 	1) 
-	y=$(($Fullday * $WagePerHr))
+	y=$(($FullDay * $WagePerHr))
 	;;
 	2)
-	y=$(($Partday * $WagePerHr))
+	y=$(($PartDay * $WagePerHr))
 	;;
 	3)
-	y=$(($DayOff * $WagePerHr))
+	y=$(($Dayoff * $WagePerHr))
 	;;
 	esac
 
