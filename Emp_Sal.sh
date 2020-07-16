@@ -7,19 +7,27 @@ FullDay=8
 PartDay=4
 Dayoff=0
 TotalWage=0
-for (( i=1; i<=20; i++ ))
+day=0
+hours=0
+while [ $day -lt 20 ] && [ $hours -le 100 ]
 do
 x=$((RANDOM % 2))
 
 	case $x in
 	1) 
 	y=$(($FullDay * $WagePerHr))
+	day=$(($day+1))
+	hours=$(($hours+$FullDay))
 	;;
 	2)
 	y=$(($PartDay * $WagePerHr))
+	day=$(($day+$((1/2))))
+        hours=$(($hours+$PartDay))
 	;;
 	3)
 	y=$(($Dayoff * $WagePerHr))
+	day=$(($day+0))
+        hours=$(($hours+$Dayoff))
 	;;
 	esac
 	TotalWage=$(($TotalWage + $y))
