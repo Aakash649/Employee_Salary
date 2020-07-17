@@ -12,13 +12,13 @@ do
 x=$((RANDOM % 2))
 
 	case $x in
-	1) 
+	0) 
 	y=$(($FullDay * $WagePerHr))
 	;;
-	2)
+	1)
 	y=$(($PartDay * $WagePerHr))
 	;;
-	3)
+	*)
 	y=$(($Dayoff * $WagePerHr))
 	;;
 	esac
