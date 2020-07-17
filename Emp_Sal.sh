@@ -10,14 +10,14 @@ Dayoff=0
 x=$((RANDOM % 2))
 
 	case $x in
-	1) 
-	y=$(($Fullday * $WagePerHr))
+	0) 
+	y=$(($FullDay * $WagePerHr))
 	;;
-	2)
-	y=$(($Partday * $WagePerHr))
+	1)
+	y=$(($PartDay * $WagePerHr))
 	;;
-	3)
-	y=$(($DayOff * $WagePerHr))
+	*)
+	y=$(($Dayoff * $WagePerHr))
 	;;
 	esac
 
