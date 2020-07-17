@@ -49,8 +49,7 @@ x=$((RANDOM % 2))
 
 
 done
-echo "Wage is :- " $TotalWage
-echo ${!Daily_Wage[@]} 
+echo "Wage is :- " $TotalWage 
 echo ${Daily_Wage[@]} 
 echo ${Total_Wage[@]}
 
