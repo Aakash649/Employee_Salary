@@ -14,17 +14,17 @@ do
 x=$((RANDOM % 2))
 
 	case $x in
-	1) 
+	0) 
 	y=$(($FullDay * $WagePerHr))
 	day=$(($day+1))
 	hours=$(($hours+$FullDay))
 	;;
-	2)
+	1)
 	y=$(($PartDay * $WagePerHr))
 	day=$(($day+$((1/2))))
         hours=$(($hours+$PartDay))
 	;;
-	3)
+	*)
 	y=$(($Dayoff * $WagePerHr))
 	day=$(($day+0))
         hours=$(($hours+$Dayoff))
